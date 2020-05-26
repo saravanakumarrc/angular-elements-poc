@@ -1,0 +1,12 @@
+<html>
+  <body>
+    <app-hello-world title="Batman"></app-hello-world>
+    <script src="./angularapp.js"></script>
+    <script>
+      const component = document.querySelector('app-hello-world');
+      component.addEventListener('display', (event) => {
+        alert(event.detail);
+      });
+    </script>
+  </body>
+</html>
