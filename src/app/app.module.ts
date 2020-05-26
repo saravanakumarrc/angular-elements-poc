@@ -14,8 +14,8 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
   providers: []
 })
 export class AppModule {
-  constructor(injector: Injector) {
-    const custom = createCustomElement(HelloWorldComponent, { injector: injector });
+  constructor(private injector: Injector) {
+    const custom = createCustomElement(HelloWorldComponent, { injector: this.injector });
     customElements.define('app-hello-world', custom);
   }
   ngDoBootstrap() {}
