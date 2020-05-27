@@ -1,0 +1,19 @@
+<div *ngIf="mode === 'viewer'" [ngClass]="{
+    'Tire': true,
+    'NormalTire': (!positionConfiguration.isInvalid && !positionConfiguration.selected && !positionConfiguration.positionId),
+    'SelectedTire': (!positionConfiguration.isInvalid && positionConfiguration.selected && !positionConfiguration.positionId),
+    'TireWithPosition': (!positionConfiguration.isInvalid && !positionConfiguration.selected && positionConfiguration.positionId > 0),
+    'SelectedTireWithPosition': (!positionConfiguration.isInvalid && positionConfiguration.selected && positionConfiguration.positionId > 0),
+    'TireWithError': positionConfiguration.isInvalid
+  }" (click)="onClick()">
+  </div>
+  <div *ngIf="mode === 'editor'" [ngClass]="{
+    'Tire': true,
+    'SpareTire': !IsEmpty() && IsSpare(),
+    'EmptyTire': IsEmpty() && !IsSpare(),
+    'EmptySpareTire': IsEmpty() && IsSpare(),
+    'NormalTire': (!positionConfiguration.selected),
+    'SelectedTire': (positionConfiguration.selected)
+  }" (click)="onClick()" [draggable]="!IsEmpty()" [title]="serialNumber" >
+  </div>
+  <p>ams-ng-tire works!</p>

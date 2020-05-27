@@ -1,12 +1,30 @@
 <html>
   <body>
-    <app-hello-world title="Batman"></app-hello-world>
+    <app-hello-world-web title="Jayan"></app-hello-world-web>
+    <ams-tire-web></ams-tire-web>
     <script src="./angularapp.js"></script>
+        
     <script>
-      const component = document.querySelector('app-hello-world');
+      const component = document.querySelector('app-hello-world-web'); //$("")
       component.addEventListener('display', (event) => {
         alert(event.detail);
       });
+
+      var positionConfiguration = {
+          "$type": "TMWSystems.AMSEnterprise.UILogic.DTO.Tire.PositionConfiguration, TMWSystems.AMSEnterprise.UILogic.DTO",
+          "tireConfigurationId": 228,
+          "tireConfigTmtCodeId": 3212,
+          "sequence": 1,
+          "positionId": 111,
+          "positionCode": "LEFT",
+          "positionDescription": "Left"
+        };
+
+const amsTire = document.querySelector('ams-tire-web');
+amsTire.positionConfiguration = positionConfiguration;
+amsTire.addEventListener('select', (event) => {
+                                alert(event.detail);
+                            });
     </script>
   </body>
 </html>

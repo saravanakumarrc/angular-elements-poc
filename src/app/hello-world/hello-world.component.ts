@@ -3,15 +3,10 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 @Component({
   selector: 'app-hello-world',
   templateUrl: './hello-world.component.html',
-  styleUrls: ['./hello-world.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  styleUrls: ['./hello-world.component.css']
 })
 export class HelloWorldComponent implements OnInit {
   @Input() title;
-  @Input() rname;
-  @Input() occupation;
-  @Input() location;
-  @Input() first;
 
   @Output() display = new EventEmitter();
 
@@ -22,5 +17,9 @@ export class HelloWorldComponent implements OnInit {
 
   showInfo() {
     this.display.emit("I am out!");
+  }
+
+  onSelect() {
+    this.display.emit("I am from child!");
   }
 }

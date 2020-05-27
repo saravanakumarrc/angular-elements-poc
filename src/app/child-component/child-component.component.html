@@ -1,0 +1,5 @@
+<p>child-component works!</p>
+<button (click)="onClick()">{{name}}</button>
+<div *ngFor="let name of ['saravana', 'swathi']">
+    <app-new-child [name]="name" (select)="onSelect()"></app-new-child>
+</div>
