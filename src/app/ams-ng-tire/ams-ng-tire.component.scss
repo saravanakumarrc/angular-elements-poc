@@ -1,27 +1,58 @@
-@mixin TireConfigStyles {
-  .Tire {
-    width: 50px;
-    height: 90px;
-    display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-top: 20px;
-    cursor: pointer;
-
-    &.hover {
-      transform: scale(1.5);
-    }  
-
-    &.TireWithPosition {
-      background: black;
+@mixin TireType() {
+    //background-image: $Tire-image;
+    background: black;
+    transform: scale(1.2);
+  }
+  
+  @mixin TireConfigStyles {
+    .Tire {
+      width: 50px;
+      height: 90px;
+      display: inline-block;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-top: 20px;
+      cursor: pointer;
+  
+      &.hover {
+        transform: scale(1.5);
+      }
+  
+      &.NormalTire {
+        @include TireType();
+      }
+  
+      &.SelectedTire {
+        @include TireType();
+      }
+  
+      &.NormalTire {
+        @include TireType();
+      }
+  
+      &.SpareTire {
+        @include TireType()
+      }
+    
+      &.SelectedTireWithPosition {
+        @include TireType();
+      }
+  
+      &.TireWithPosition {
+        @include TireType();
+      }
+  
+      &.GoodTire {
+        @include TireType();
+      }
     }
   }
-}
-
-:host {
-  @include TireConfigStyles;
-}
-
-ams-tire-config-viewer {
-  @include TireConfigStyles;
-}
+  
+  :host {
+    @include TireConfigStyles;
+  }
+  
+  ams-tire-config-viewer {
+    @include TireConfigStyles;
+  }
+  
